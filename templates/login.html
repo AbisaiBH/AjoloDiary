@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Iniciar Sesión - Diario Emocional{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow fade-in">
+            <div class="card-header bg-primary text-white text-center">
+                <h3>Bienvenido a tu Diario Emocional</h3>
+            </div>
+            <div class="card-body p-5">
+                <div class="text-center mb-4">
+                    <i class="bi bi-journal-richtext display-1 text-primary"></i>
+                    <h4 class="mt-4">Tu espacio seguro</h4>
+                    <p class="text-muted">Un lugar para expresar y entender tus emociones</p>
+                </div>
+                
+                <form method="post">
+                    <div class="mb-4">
+                        <label for="username" class="form-label">¿Cómo te gustaría que te llamemos?</label>
+                        <div class="input-group">
+                            <span class="input-group-text">
+                                <i class="bi bi-person"></i>
+                            </span>
+                            <input type="text" class="form-control form-control-lg" id="username" name="username" 
+                                   placeholder="Tu nombre" required autofocus aria-describedby="usernameHelp">
+                        </div>
+                        <div id="usernameHelp" class="form-text">
+                            Este nombre se usará para personalizar tu experiencia.
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Comenzar
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer text-center py-3">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="bi bi-shield-lock text-primary me-2"></i>
+                            <span class="text-muted">Privado</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="bi bi-graph-up text-primary me-2"></i>
+                            <span class="text-muted">Análisis</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="d-flex align-items-center justify-content-center">
+                            <i class="bi bi-lightbulb text-primary me-2"></i>
+                            <span class="text-muted">Consejos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Nueva Entrada - Diario Emocional{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="mb-3">
+            <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Volver al inicio
+            </a>
+        </div>
+        
+        <div class="card shadow fade-in">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0"><i class="bi bi-journal-plus me-2"></i> ¿Cómo te sientes hoy?</h4>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    <div class="mb-4">
+                        <label class="form-label fs-5">Selecciona un emoji que represente tu estado de ánimo:</label>
+                        <div class="emoji-selector">
+                            <div class="btn-group" role="group" aria-label="Selección de emoji">
+                                <input type="radio" class="btn-check" name="emoji" id="emoji1" value="😄" required>
+                                <label class="btn btn-outline-primary emoji-btn" for="emoji1" tabindex="0">
+                                    😄
+                                    <span class="emoji-label">Feliz</span>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="emoji" id="emoji2" value="🙂">
+                                <label class="btn btn-outline-primary emoji-btn" for="emoji2" tabindex="0">
+                                    🙂
+                                    <span class="emoji-label">Positivo</span>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="emoji" id="emoji3" value="😐">
+                                <label class="btn btn-outline-primary emoji-btn" for="emoji3" tabindex="0">
+                                    😐
+                                    <span class="emoji-label">Neutral</span>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="emoji" id="emoji4" value="😕">
+                                <label class="btn btn-outline-primary emoji-btn" for="emoji4" tabindex="0">
+                                    😕
+                                    <span class="emoji-label">Negativo</span>
+                                </label>
+                                
+                                <input type="radio" class="btn-check" name="emoji" id="emoji5" value="😢">
+                                <label class="btn btn-outline-primary emoji-btn" for="emoji5" tabindex="0">
+                                    😢
+                                    <span class="emoji-label">Triste</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div id="emoji-feedback" class="text-center mt-2 text-primary" style="opacity: 0; transition: opacity 0.3s ease;"></div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="entry_text" class="form-label fs-5">Cuéntame sobre tu día:</label>
+                        <p class="text-muted mb-2">Escribe libremente cómo te sientes, qué ha pasado hoy o cualquier cosa que quieras expresar.</p>
+                        <textarea class="form-control" id="entry_text" name="entry_text" rows="6" required 
+                                  placeholder="¿Qué te hizo sentir así? ¿Qué pasó hoy? Puedes escribir todo lo que quieras..."
+                                  aria-describedby="textHelp"></textarea>
+                        <div id="textHelp" class="form-text">
+                            Tu entrada será analizada para entender mejor tus emociones y ofrecerte retroalimentación personalizada.
+                        </div>
+                    </div>
+                    
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-save me-2"></i> Guardar entrada
+                        </button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer bg-light">
+                <div class="d-flex align-items-center">
+                    <i class="bi bi-shield-lock me-2 text-muted"></i>
+                    <small class="text-muted">Tu diario es privado y solo tú puedes verlo</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card mt-4 shadow-sm fade-in">
+            <div class="card-body">
+                <h5><i class="bi bi-info-circle me-2"></i> Consejos para expresar tus emociones</h5>
+                <ul class="mb-0">
+                    <li>Sé honesto/a contigo mismo/a sobre cómo te sientes realmente</li>
+                    <li>No hay emociones "buenas" o "malas", todas son válidas</li>
+                    <li>Intenta identificar qué situaciones desencadenaron tus emociones</li>
+                    <li>Describe cómo te sientes física y mentalmente</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
